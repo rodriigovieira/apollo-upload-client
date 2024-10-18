@@ -32,13 +32,19 @@
   "files": [
     "createUploadLink.js",
     "formDataAppendFile.js",
-    "isExtractableFile.js"
+    "isExtractableFile.js",
+    "extractFile.js",
+    "isExtractableFile.js",
+    "isExtractFile.js"
   ],
   "sideEffects": false,
   "exports": {
     "./createUploadLink.js": "./createUploadLink.js",
     "./formDataAppendFile.js": "./formDataAppendFile.js",
     "./isExtractableFile.js": "./isExtractableFile.js",
+    "./extractFile.js": "./extractFile.js",
+    "./isExtractFile.js": "./isExtractFile.js",
+    "./extractFiles.js": "./extractFiles.js",
     "./package.json": "./package.json"
   },
   "engines": {
@@ -48,9 +54,6 @@
   "peerDependencies": {
     "@apollo/client": "^3.8.0",
     "graphql": "14 - 16"
-  },
-  "dependencies": {
-    "extract-files": "^13.0.0"
   },
   "devDependencies": {
     "@apollo/client": "^3.8.6",
@@ -74,5 +77,8 @@
     "tests": "coverage-node --test-reporter=spec --test",
     "test": "npm run eslint && npm run prettier && npm run types && npm run tests",
     "prepublishOnly": "npm test"
+  },
+  "dependencies": {
+    "is-plain-obj": "^4.1.0"
   }
 }
