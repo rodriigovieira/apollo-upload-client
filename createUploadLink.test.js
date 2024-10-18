@@ -1,6 +1,6 @@
 // @ts-check
 
-import "./test/polyfillFile.mjs";
+import "./test/polyfillFile.js";
 
 import { deepEqual, deepStrictEqual, ok, strictEqual } from "node:assert";
 import { describe, it } from "node:test";
@@ -12,10 +12,10 @@ import { stripIgnoredCharacters } from "graphql";
 import { gql } from "graphql-tag";
 import revertableGlobals from "revertable-globals";
 
-import createUploadLink from "./createUploadLink.mjs";
-import assertBundleSize from "./test/assertBundleSize.mjs";
-import createUnexpectedCallError from "./test/createUnexpectedCallError.mjs";
-import timeLimitPromise from "./test/timeLimitPromise.mjs";
+import createUploadLink from "./createUploadLink.js";
+import assertBundleSize from "./test/assertBundleSize.js";
+import createUnexpectedCallError from "./test/createUnexpectedCallError.js";
+import timeLimitPromise from "./test/timeLimitPromise.js";
 
 const defaultUri = "/graphql";
 const graphqlResponseOptions = {
@@ -28,7 +28,7 @@ const graphqlResponseOptions = {
 describe("Function `createUploadLink`.", { concurrency: true }, () => {
   it("Bundle size.", async () => {
     await assertBundleSize(
-      new URL("./createUploadLink.mjs", import.meta.url),
+      new URL("./createUploadLink.js", import.meta.url),
       1800,
     );
   });

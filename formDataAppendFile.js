@@ -6,7 +6,7 @@
  * method.
  * @param {FormData} formData Form data to append the specified file to.
  * @param {string} fieldName Field name for the file.
- * @param {import("./isExtractableFile.mjs").ExtractableFile} file File to
+ * @param {import("./isExtractableFile.js").ExtractableFile} file File to
  *   append.
  */
 export default function formDataAppendFile(formData, fieldName, file) {

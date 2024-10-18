@@ -12,10 +12,10 @@ import {
 import { selectURI } from "@apollo/client/link/http/selectURI.js";
 import { serializeFetchParameter } from "@apollo/client/link/http/serializeFetchParameter.js";
 import { Observable } from "@apollo/client/utilities/observables/Observable.js";
-import extractFiles from "extract-files/extractFiles.mjs";
+import extractFiles from "extract-files/extractFiles.js";
 
-import formDataAppendFile from "./formDataAppendFile.mjs";
-import isExtractableFile from "./isExtractableFile.mjs";
+import formDataAppendFile from "./formDataAppendFile.js";
+import isExtractableFile from "./isExtractableFile.js";
 
 /**
  * Creates a
@@ -69,7 +69,7 @@ import isExtractableFile from "./isExtractableFile.mjs";
  *
  * ```js
  * import { ApolloClient, InMemoryCache } from "@apollo/client";
- * import createUploadLink from "apollo-upload-client/createUploadLink.mjs";
+ * import createUploadLink from "apollo-upload-client/createUploadLink.js";
  *
  * const client = new ApolloClient({
  *   cache: new InMemoryCache(),
@@ -275,7 +275,7 @@ export default function createUploadLink({
  * file:
  *
  * ```js
- * import isExtractableFile from "apollo-upload-client/isExtractableFile.mjs";
+ * import isExtractableFile from "apollo-upload-client/isExtractableFile.js";
  *
  * const isExtractableFileEnhanced = (value) =>
  *   isExtractableFile(value) ||

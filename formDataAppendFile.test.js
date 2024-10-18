@@ -1,17 +1,17 @@
 // @ts-check
 
-import "./test/polyfillFile.mjs";
+import "./test/polyfillFile.js";
 
 import { ok, strictEqual } from "node:assert";
 import { describe, it } from "node:test";
 
-import formDataAppendFile from "./formDataAppendFile.mjs";
-import assertBundleSize from "./test/assertBundleSize.mjs";
+import formDataAppendFile from "./formDataAppendFile.js";
+import assertBundleSize from "./test/assertBundleSize.js";
 
 describe("Function `formDataAppendFile`.", { concurrency: true }, () => {
   it("Bundle size.", async () => {
     await assertBundleSize(
-      new URL("./formDataAppendFile.mjs", import.meta.url),
+      new URL("./formDataAppendFile.js", import.meta.url),
       100,
     );
   });

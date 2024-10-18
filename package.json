@@ -1,6 +1,7 @@
 {
   "name": "apollo-upload-client",
   "version": "18.0.1",
+  "type": "module",
   "description": "A terminating Apollo Link for Apollo Client that fetches a GraphQL multipart request if the GraphQL variables contain files (by default FileList, File, or Blob instances), or else fetches a regular GraphQL POST or GET request (depending on the config and GraphQL operation).",
   "license": "MIT",
   "author": {
@@ -29,15 +30,15 @@
     "mjs"
   ],
   "files": [
-    "createUploadLink.mjs",
-    "formDataAppendFile.mjs",
-    "isExtractableFile.mjs"
+    "createUploadLink.js",
+    "formDataAppendFile.js",
+    "isExtractableFile.js"
   ],
   "sideEffects": false,
   "exports": {
-    "./createUploadLink.mjs": "./createUploadLink.mjs",
-    "./formDataAppendFile.mjs": "./formDataAppendFile.mjs",
-    "./isExtractableFile.mjs": "./isExtractableFile.mjs",
+    "./createUploadLink.js": "./createUploadLink.js",
+    "./formDataAppendFile.js": "./formDataAppendFile.js",
+    "./isExtractableFile.js": "./isExtractableFile.js",
     "./package.json": "./package.json"
   },
   "engines": {

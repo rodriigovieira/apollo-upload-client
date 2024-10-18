@@ -40,25 +40,25 @@
   -   formDataAppendFile,
   -   isExtractableFile
   - } from "apollo-upload-client";
-  + import createUploadLink from "apollo-upload-client/createUploadLink.mjs";
-  + import formDataAppendFile from "apollo-upload-client/formDataAppendFile.mjs";
-  + import isExtractableFile from "apollo-upload-client/isExtractableFile.mjs";
+  + import createUploadLink from "apollo-upload-client/createUploadLink.js";
+  + import formDataAppendFile from "apollo-upload-client/formDataAppendFile.js";
+  + import isExtractableFile from "apollo-upload-client/isExtractableFile.js";
   ```
 
 - Shortened public module deep import paths, removing the `/public/`. To migrate:
 
   ```diff
   - import createUploadLink from "apollo-upload-client/public/createUploadLink.js";
-  + import createUploadLink from "apollo-upload-client/createUploadLink.mjs";
+  + import createUploadLink from "apollo-upload-client/createUploadLink.js";
 
   - import formDataAppendFile from "apollo-upload-client/public/formDataAppendFile.js";
-  + import formDataAppendFile from "apollo-upload-client/formDataAppendFile.mjs";
+  + import formDataAppendFile from "apollo-upload-client/formDataAppendFile.js";
 
   - import isExtractableFile from "apollo-upload-client/public/isExtractableFile.js";
-  + import isExtractableFile from "apollo-upload-client/isExtractableFile.mjs";
+  + import isExtractableFile from "apollo-upload-client/isExtractableFile.js";
   ```
 
-- The API is now ESM in `.mjs` files instead of CJS in `.js` files, [accessible via `import` but not `require`](https://nodejs.org/dist/latest/docs/api/esm.html#require).
+- The API is now ESM in `.js` files instead of CJS in `.js` files, [accessible via `import` but not `require`](https://nodejs.org/dist/latest/docs/api/esm.html#require).
 - Implemented TypeScript types via JSDoc comments.
 
   Types published in [`@types/apollo-upload-client`](https://npm.im/@types/apollo-upload-client) should no longer be used.
@@ -146,7 +146,7 @@
 - Replaced the the `package.json` `exports` field public [subpath folder mapping](https://nodejs.org/api/packages.html#packages_subpath_folder_mappings) (deprecated by Node.js) with a [subpath pattern](https://nodejs.org/api/packages.html#packages_subpath_patterns). Deep `require` paths within `apollo-upload-client/public/` must now include the `.js` file extension.
 - Removed Babel related dependencies, config, and scripts. Published modules now contain more modern ES syntax.
 - Published modules now contain JSDoc comments, which might affect TypeScript projects.
-- The tests are now ESM in `.mjs` files instead of CJS in `.js` files.
+- The tests are now ESM in `.js` files instead of CJS in `.js` files.
 
 ### Patch
 
@@ -359,7 +359,7 @@
 ### Major
 
 - Made [`apollo-link`](https://npm.im/apollo-link) a dependency, instead of a peer dependency.
-- Removed the package `module` entry and the "ESM" build, which was `.js` and not proper native ESM for Node.js via `.mjs` as Apollo dependencies don’t support it.
+- Removed the package `module` entry and the "ESM" build, which was `.js` and not proper native ESM for Node.js via `.js` as Apollo dependencies don’t support it.
 
 ### Minor
 
@@ -388,7 +388,7 @@
 - Use `.prettierignore` to defer `package.json` formatting to npm.
 - Renamed `.babelrc.js` to `babel.config.js` and simplified ESLint ignore config.
 - Improved linting with [`eslint-config-env`](https://npm.im/eslint-config-env).
-- Use the `.mjs` extension for source.
+- Use the `.js` extension for source.
 - Added JSDoc comments to source.
 - Refactored package scripts:
   - Use `prepare` to support installation via Git (e.g. `npm install jaydenseric/apollo-upload-client`).
@@ -403,7 +403,7 @@
 
 ## 8.0.0
 
-- Abandon `.mjs` [until Apollo provides native ESM](https://github.com/apollographql/apollo-link/issues/537), fixing [#72](https://github.com/jaydenseric/apollo-upload-client/issues/72).
+- Abandon `.js` [until Apollo provides native ESM](https://github.com/apollographql/apollo-link/issues/537), fixing [#72](https://github.com/jaydenseric/apollo-upload-client/issues/72).
 - New readme logo URL that doesn’t need to be updated every version.
 
 ## 7.1.0
@@ -460,7 +460,7 @@
 ## 6.0.3
 
 - Response is set on the context, via [#40](https://github.com/jaydenseric/apollo-upload-client/pull/40).
-- Configured `lint-staged` for `.mjs`.
+- Configured `lint-staged` for `.js`.
 
 ## 6.0.2
 
@@ -507,7 +507,7 @@
 - Using `prettier` to format distribution code as well as source code.
 - No more source maps, as Prettier does not support them.
 - Renamed `dist` directory to `lib`.
-- Module files now have `.mjs` extension.
+- Module files now have `.js` extension.
 - Removed `babel-eslint` as the vanilla parser works fine.
 - Readme improvements:
   - Relative logo path.
