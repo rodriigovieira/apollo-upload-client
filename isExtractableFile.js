@@ -1,10 +1,19 @@
 // @ts-check
 
-export { default } from "extract-files/isExtractableFile.js";
+/**
+ * Checks if a value is an {@link ExtractableFile extractable file}.
+ * @param {unknown} value Value to check.
+ * @returns {value is ExtractableFile} Is the value an
+ *   {@link ExtractableFile extractable file}.
+ */
+export default function isExtractableFile(value) {
+  return (
+    (typeof File !== "undefined" && value instanceof File) ||
+    (typeof Blob !== "undefined" && value instanceof Blob)
+  );
+}
 
 /**
  * An extractable file.
- * @typedef {import(
- *   "extract-files/isExtractableFile.js"
- * ).ExtractableFile} ExtractableFile
+ * @typedef {File | Blob} ExtractableFile
  */
