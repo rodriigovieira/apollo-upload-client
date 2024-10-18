@@ -12,8 +12,8 @@ import {
 import { selectURI } from "@apollo/client/link/http/selectURI.js";
 import { serializeFetchParameter } from "@apollo/client/link/http/serializeFetchParameter.js";
 import { Observable } from "@apollo/client/utilities/observables/Observable.js";
-import extractFiles from "extract-files/extractFiles.js";
 
+import extractFiles from "./extractFile.js";
 import formDataAppendFile from "./formDataAppendFile.js";
 import isExtractableFile from "./isExtractableFile.js";
 
